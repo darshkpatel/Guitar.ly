@@ -1,9 +1,9 @@
 import Nav from '../components/nav';
 
-const Tune = () => (
+const Learn = () => (
   <>
     <Nav />
   </>
 );
 
-export default Tune;
+export default Learn;
