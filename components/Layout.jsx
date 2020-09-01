@@ -3,6 +3,7 @@ import Footer from './Footer';
 
 const Layout = () => (
   <>
+
     <header>
       <title>Guitar.ly</title>
     </header>
