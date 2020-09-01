@@ -6,7 +6,7 @@
   overflow: auto;
   padding: 0.4rem 0.8rem;
   margin: 0;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   color: white;
 }
 
@@ -44,7 +44,7 @@
 .avatar:hover .dropdown {
   display: block;
 }
-.navButton {
+.loginButton {
   float: right;
   margin-right: -0.4rem;
   font-weight: 300;
@@ -59,9 +59,27 @@
   color: #FFFFFF;
 }
 
-.navButton:hover {
-  text-shadow: 0px 0px 4px rgb(202, 202, 202)
+.loginButton:hover {
+  text-shadow: 0px 0px 4px rgb(241, 241, 241)
 }
+
+
+.navButton {
+  cursor: pointer;
+  padding: 0.8rem 1rem;
+}
+
+.navButtonActive {
+  cursor: default;
+  padding: 0.8rem 1rem;
+  color: black;
+}
+
+.navButton:hover {
+  text-shadow: 0px 0px 4px rgb(241, 241, 241)
+
+}
+
 
 .navBar{
 position: absolute;
@@ -81,4 +99,19 @@ z-index: 1;
   background-size: cover;
   margin-left: -0rem;
   height: 2.8rem;
+}
+
+.navItems{
+  cursor: default;
+  float: center;
+  position: absolute;
+  left: 40%;
+  font-weight: 300;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1rem;
+  padding: 0.8rem 1rem;
+  overflow: hidden;
+  font-style: normal;
+  color: #FFFFFF;
 }
