@@ -1,8 +1,11 @@
 import Layout from '../components/Layout';
+import NoteGauge from '../components/NoteGauge';
 
 const Tune = () => (
   <>
-    <Layout />
+    <Layout>
+      <NoteGauge />
+    </Layout>
   </>
 );
 
