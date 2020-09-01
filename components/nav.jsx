@@ -14,8 +14,9 @@ const Nav = () => {
       >
 
         {/* Logo */}
-        <img src="/assets/logo.svg" alt="logo" className={styles.logo} />
-
+        <Link href="/">
+          <img src="/assets/logo.svg" alt="logo" className={styles.logo} />
+        </Link>
         {/* Nav Buttons */}
         <div className={styles.navItems}>
           <Link href="/tune">

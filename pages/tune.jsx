@@ -1,8 +1,8 @@
-import Nav from '../components/nav';
+import Layout from '../components/Layout';
 
 const Tune = () => (
   <>
-    <Nav />
+    <Layout />
   </>
 );
 
