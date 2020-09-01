@@ -4,7 +4,7 @@ import styles from '../components/homepage.module.css';
 const Homepage = () => (
   <div className={styles.container}>
     <div className={styles.rightContainer}>
-      <img src="/assets/bottom_flow_black.svg" alt="bottom flow" />
+      <img src="/assets/bottom_flow_black.svg" alt="bottom flow" className={styles.bottom} />
       <img src="/assets/logo_text.svg" alt="logo and text" className={styles.centerImg} />
     </div>
     <Link href="/tune">
