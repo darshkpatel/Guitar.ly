@@ -1,0 +1,32 @@
+.container{
+    background: #E5E5E5;
+    display: flex;
+}
+
+.rightContainer{
+position: absolute;
+flex: 1;
+min-width: 80%;
+height: 100%;
+display: flex;
+flex-direction: column;
+flex-direction: column-reverse;
+background: #0099FF;
+}
+
+.centerImg{
+    position: absolute;
+    bottom: 12%;
+    right: 40%;
+    width: 40%;
+}
+
+.getStarted{
+    position: absolute;
+    left: 30%;
+    bottom: 50%;
+    cursor: pointer;
+}
+.getStarted:active{
+     transform: translateY(10px);
+}
