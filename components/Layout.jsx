@@ -1,5 +1,5 @@
 import Navbar from './Navbar.jsx';
-import Footer from './Footer.jsx';
+import PageFooter from './PageFooter.jsx';
 import styles from './layout.module.css';
 
 const Layout = ({ children }) => (
@@ -13,7 +13,7 @@ const Layout = ({ children }) => (
       <div className={styles.content}>
         {children}
       </div>
-      <Footer />
+      <PageFooter />
     </div>
   </>
 );

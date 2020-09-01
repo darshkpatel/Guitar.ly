@@ -1,6 +1,6 @@
 import styles from './footer.module.css';
 
-const Footer = () => (
+const PageFooter = () => (
   <div className={styles.footer}>
     <img alt="footer" src="/assets/footer_guitar.svg" className={styles.footerImg} />
     <span className={styles.footerText}>
@@ -15,4 +15,4 @@ const Footer = () => (
   </div>
 );
 
-export default Footer;
+export default PageFooter;
