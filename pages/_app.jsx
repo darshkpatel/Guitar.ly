@@ -1,11 +1,18 @@
-import { Provider } from 'next-auth/client';
+import { Provider as AuthProvider } from 'next-auth/client';
+import { Provider } from 'react-redux';
+import { useStore } from '../redux/store';
+
 import '../styles.css';
 
 const App = ({ Component, pageProps }) => {
   const { session } = pageProps;
+  const store = useStore(pageProps.initialReduxState);
+
   return (
-    <Provider options={{ site: process.env.SITE }} session={session}>
-      <Component {...pageProps} />
+    <Provider store={store}>
+      <AuthProvider options={{ site: process.env.SITE }} session={session}>
+        <Component {...pageProps} />
+      </AuthProvider>
     </Provider>
   );
 };
