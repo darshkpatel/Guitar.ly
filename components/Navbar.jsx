@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import Link from 'next/link';
 import styles from './nav.module.css';
 
-const Nav = () => {
+const Navbar = () => {
   const router = useRouter();
   const [session, loading] = useSession();
 
@@ -81,4 +81,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default Navbar;

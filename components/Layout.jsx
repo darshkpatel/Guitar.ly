@@ -1,5 +1,5 @@
-import Nav from './Nav';
-import Footer from './Footer';
+import Navbar from './Navbar.jsx';
+import Footer from './Footer.jsx';
 import styles from './layout.module.css';
 
 const Layout = ({ children }) => (
@@ -9,7 +9,7 @@ const Layout = ({ children }) => (
       <header>
         <title>Guitar.ly</title>
       </header>
-      <Nav />
+      <Navbar />
       <div className={styles.content}>
         {children}
       </div>
