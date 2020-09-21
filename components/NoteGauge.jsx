@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AudioAnalyser from './AudioAnalyser';
+import buttonStyles from './buttons.module.css';
 
 const NoteGauge = () => {
   const [audio, setAudio] = useState();
@@ -28,7 +29,7 @@ const NoteGauge = () => {
   return (
     <div className="App">
       <div className="controls">
-        <button onClick={toggleMicrophone} type="button">
+        <button onClick={toggleMicrophone} type="button" className={buttonStyles.buttonMic}>
           {audio ? 'Stop microphone' : 'Start microphone'}
         </button>
       </div>

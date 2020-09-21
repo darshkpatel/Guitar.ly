@@ -6,4 +6,7 @@ body {
   margin: 0 auto;
   color: #333;
 }
-
+button {
+  font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica',
+  'Arial', sans-serif;
+}
