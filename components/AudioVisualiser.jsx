@@ -12,7 +12,7 @@ const AudioVisualiser = ({ audioData }) => {
     const sliceWidth = (width * 1.0) / audioData.audioData.length;
 
     context.lineWidth = 2;
-    context.strokeStyle = '#000000';
+    context.strokeStyle = '#3999FF';
     context.clearRect(0, 0, width, height);
 
     context.beginPath();

@@ -18,6 +18,7 @@ const noteStrings = [
 ];
 
 // Simplified from nu.js
+// ref https://pages.mtu.edu/~suits/notefreqs.html
 const getNote = freq => {
   const note = 12 * (Math.log(freq / 440) / Math.log(2));
   return Math.round(note) + 69;
@@ -30,7 +31,6 @@ const AudioAnalyser = ({audio}) => {
   let dataArray;
   let source;
   let rafId;
-
   const tick = () => {
     analyser.getByteTimeDomainData(dataArray);
     setAudioData({ audioData: dataArray });
@@ -40,7 +40,7 @@ const AudioAnalyser = ({audio}) => {
     });
     const pitch = detectPitch(dataArray);
     if (pitch) {
-      const freq = Math.floor(pitch);
+      const freq = Math.floor(pitch * 1.09);
       const note = getNote(freq);
       const noteName = noteStrings[note % 12];
       const octave = parseInt(note / 12) - 1;
@@ -54,6 +54,8 @@ const AudioAnalyser = ({audio}) => {
     audioContext = new (window.AudioContext
       || window.webkitAudioContext)();
     analyser = audioContext.createAnalyser();
+    analyser.fftSize = 2048;
+    analyser.smoothingTimeConstant = 0.99;
     dataArray = new Uint8Array(analyser.frequencyBinCount);
     source = audioContext.createMediaStreamSource(audio);
     source.connect(analyser);
