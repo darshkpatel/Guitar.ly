@@ -1,7 +1,8 @@
- /* eslint-disable react-hooks/exhaustive-deps */ 
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import Pitchfinder from "pitchfinder";
 import AudioVisualiser from "./AudioVisualiser";
+import Gauge from "./Gauge";
 
 const noteStrings = [
   "C",
@@ -27,6 +28,9 @@ const getNote = (freq) => {
 
 const AudioAnalyser = ({ audio }) => {
   const [audioData, setAudioData] = useState(new Uint8Array(0));
+  const [noteName, setNoteName] = useState("E");
+  const [frequency, setFrequency] = useState(82);
+  const [octave, setOctave] = useState(2);
   let audioContext;
   let analyser;
   let dataArray;
@@ -43,9 +47,10 @@ const AudioAnalyser = ({ audio }) => {
     if (pitch) {
       const freq = Math.floor(pitch * 1.09);
       const note = getNote(freq);
-      const noteName = noteStrings[note % 12];
-      const octave = parseInt(note / 12, 10) - 1;
-      console.log({ freq, note, noteName, octave });
+      setFrequency(freq);
+      setNoteName(noteStrings[note % 12]);
+      setOctave(parseInt(note / 12, 10) - 1);
+      // console.log({ frequency, note, noteName, octave });
     }
     rafId = requestAnimationFrame(tick);
   };
@@ -55,7 +60,7 @@ const AudioAnalyser = ({ audio }) => {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
     analyser = audioContext.createAnalyser();
     analyser.fftSize = 2048;
-    analyser.smoothingTimeConstant = 0.99;
+    analyser.smoothingTimeConstant = 1;
     dataArray = new Uint8Array(analyser.frequencyBinCount);
     source = audioContext.createMediaStreamSource(audio);
     source.connect(analyser);
@@ -68,7 +73,13 @@ const AudioAnalyser = ({ audio }) => {
     };
   }, []);
 
-  return <AudioVisualiser audioData={audioData} />;
+  return (
+    <>
+      <Gauge value={frequency} min={70} max={400} label={`${noteName} - ${octave}`} />
+
+      <AudioVisualiser audioData={audioData} />
+    </>
+  );
 };
 
 export default AudioAnalyser;
