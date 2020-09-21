@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from "react";
 
 const AudioVisualiser = ({ audioData }) => {
   const canvas = React.createRef();
@@ -7,12 +7,12 @@ const AudioVisualiser = ({ audioData }) => {
     const thisCanvas = canvas.current;
     const { height } = thisCanvas;
     const { width } = thisCanvas;
-    const context = thisCanvas.getContext('2d');
+    const context = thisCanvas.getContext("2d");
     let x = 0;
     const sliceWidth = (width * 1.0) / audioData.audioData.length;
 
     context.lineWidth = 2;
-    context.strokeStyle = '#3999FF';
+    context.strokeStyle = "#3999FF";
     context.clearRect(0, 0, width, height);
 
     context.beginPath();
