@@ -2,7 +2,7 @@
     color:#fff;
     padding:20px 30px;
     outline: none;
-    background-color: #27ae60;
+    background-color: #3999FF;
     border: none;
     border-radius:5px;
     text-align: center;
@@ -16,12 +16,12 @@
   }
 
   .buttonMic:hover{
-    background-color: #2ecc71;
+    background-color: #0b81ff;
   }
 
 
 .buttonMic:active {
-    background-color: #2ecc71;
+    background-color: #0b81ff;
     transform: translateY(4px);
   }
   
