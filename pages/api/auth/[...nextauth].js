@@ -22,7 +22,10 @@ const options = {
 
       // Create user profile entry when a user is created
       console.log('Creating Profile for', message.email)
-      await Profile.create({userEmail: message.email, completedLessons: [], completedPractices: []})
+      await Profile.create({userEmail: message.email, completedLessons: [], completedPractices: []}, (err, data)=>{
+        if(err) throw err;
+        console.log('Created Profile', data)
+      })
       
     }
   }
