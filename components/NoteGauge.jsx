@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AudioAnalyser from './AudioAnalyser';
-import buttonStyles from './buttons.module.css';
+import buttonStyles from './styles/buttons.module.css';
 
 const NoteGauge = () => {
   const [audio, setAudio] = useState();

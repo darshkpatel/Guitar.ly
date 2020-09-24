@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import styles from '../components/homepage.module.css';
+import styles from '../components/styles/homepage.module.css';
 
 const Homepage = () => (
   <div className={styles.container}>

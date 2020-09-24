@@ -1,6 +1,6 @@
-import Navbar from './Navbar.jsx';
-import PageFooter from './PageFooter.jsx';
-import styles from './layout.module.css';
+import Navbar from './Navbar';
+import PageFooter from './PageFooter';
+import styles from './styles/layout.module.css';
 
 const Layout = ({ children }) => (
   <>

@@ -1,7 +1,7 @@
 import { signin, signout, useSession } from 'next-auth/client';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-import styles from './nav.module.css';
+import styles from './styles/nav.module.css';
 
 const Navbar = () => {
   const router = useRouter();
