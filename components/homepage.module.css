@@ -1,7 +1,6 @@
 .container{
     background: #E5E5E5;
     display: flex;
-    overflow: hidden;
 }
 
 .rightContainer{

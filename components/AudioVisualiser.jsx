@@ -4,7 +4,7 @@ const AudioVisualiser = ({ audioData }) => {
   const canvas = React.createRef();
 
   const filterData = (rawData) => {
-    const samples = 70; 
+    const samples = 100; 
     const blockSize = Math.floor(rawData.length / samples); 
     const filteredData = [];
     for (let i = 0; i < samples; i++) {
@@ -56,7 +56,7 @@ const AudioVisualiser = ({ audioData }) => {
       draw();
     }
   });
-  return <canvas width="300" height="300" ref={canvas} />;
+  return <canvas style={{width: '100%', height: '100px'}} ref={canvas} />;
 };
 
 export default AudioVisualiser;
