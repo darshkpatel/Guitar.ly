@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+
 const ProfileSchema = new mongoose.Schema({
     userEmail: {
         type: String,
@@ -13,4 +14,4 @@ const ProfileSchema = new mongoose.Schema({
 })
 
 
-export default mongoose.models('Profile', ProfileSchema)
+export default mongoose.models.Profile || mongoose.model('Profile', ProfileSchema)
