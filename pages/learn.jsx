@@ -1,6 +1,7 @@
 import { useSession } from "next-auth/client";
 import { useRouter } from "next/router";
 import Layout from "../components/Layout";
+import Card from "../components/Card";
 
 const Learn = () => {
   const router = useRouter();
@@ -12,6 +13,7 @@ const Learn = () => {
   return (
     <>
       <Layout>
+        <Card />
       </Layout>
     </>
   );
