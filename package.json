@@ -20,6 +20,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.1.0",
     "mongodb": "^3.6.0",
+    "mongoose": "^5.10.6",
     "next": "latest",
     "next-auth": "^2.1.0",
     "pitchfinder": "^2.3.1",
