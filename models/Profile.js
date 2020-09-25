@@ -1,17 +1,17 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
 
 const ProfileSchema = new mongoose.Schema({
-    userEmail: {
-        type: String,
-        required: true
-    },
-    completedLessons: {
-        type: Array
-    },
-    completedPractices: {
-        type: Array
-    }
-})
+  userEmail: {
+    type: String,
+    required: true,
+  },
+  completedLessons: {
+    type: Array,
+  },
+  completedPractices: {
+    type: Array,
+  },
+});
 
-
-export default mongoose.models.Profile || mongoose.model('Profile', ProfileSchema)
+export default mongoose.models.Profile ||
+  mongoose.model('Profile', ProfileSchema);

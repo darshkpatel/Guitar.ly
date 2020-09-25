@@ -1,5 +1,5 @@
-import connectDb from "../../../utils/dbHelper";
-import Lesson from "../../../models/Lesson";
+import connectDb from '../../../utils/dbHelper';
+import Lesson from '../../../models/Lesson';
 
 export default async function handler(req, res) {
   await connectDb();

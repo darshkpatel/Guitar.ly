@@ -1,5 +1,5 @@
-import connectDb from "../../../utils/dbHelper";
-import Lesson from "../../../models/Lesson";
+import connectDb from '../../../utils/dbHelper';
+import Lesson from '../../../models/Lesson';
 
 export default async function handler(req, res) {
   const {
@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   } = req;
 
   await connectDb();
-  
+
   try {
     const lesson = await Lesson.findById(id);
     if (!lesson) res.status(404);
@@ -15,5 +15,4 @@ export default async function handler(req, res) {
   } catch (error) {
     res.status(400).json({ success: false });
   }
-  
 }

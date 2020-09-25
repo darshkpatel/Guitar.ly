@@ -1,22 +1,22 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect } from "react";
-import Pitchfinder from "pitchfinder";
-import AudioVisualiser from "./AudioVisualiser";
-import Gauge from "./Gauge";
+import React, { useState, useEffect } from 'react';
+import Pitchfinder from 'pitchfinder';
+import AudioVisualiser from './AudioVisualiser';
+import Gauge from './Gauge';
 
 const noteStrings = [
-  "C",
-  "C♯",
-  "D",
-  "D♯",
-  "E",
-  "F",
-  "F♯",
-  "G",
-  "G♯",
-  "A",
-  "A♯",
-  "B",
+  'C',
+  'C♯',
+  'D',
+  'D♯',
+  'E',
+  'F',
+  'F♯',
+  'G',
+  'G♯',
+  'A',
+  'A♯',
+  'B',
 ];
 
 // Simplified from nu.js
@@ -28,7 +28,7 @@ const getNote = (freq) => {
 
 const AudioAnalyser = ({ audio }) => {
   const [audioData, setAudioData] = useState(new Uint8Array(0));
-  const [noteName, setNoteName] = useState("E");
+  const [noteName, setNoteName] = useState('E');
   const [frequency, setFrequency] = useState(82);
   const [octave, setOctave] = useState(2);
   let audioContext;
@@ -75,7 +75,12 @@ const AudioAnalyser = ({ audio }) => {
 
   return (
     <>
-      <Gauge value={frequency} min={70} max={400} label={`${noteName} - ${octave}`} />
+      <Gauge
+        value={frequency}
+        min={70}
+        max={400}
+        label={`${noteName} - ${octave}`}
+      />
 
       <AudioVisualiser audioData={audioData} />
     </>

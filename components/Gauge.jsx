@@ -1,8 +1,8 @@
 // https://wattenberger.com/blog/gauge
 
-import React from "react";
-import { arc } from "d3-shape";
-import { scaleLinear } from "d3-scale";
+import React from 'react';
+import { arc } from 'd3-shape';
+import { scaleLinear } from 'd3-scale';
 
 const Gauge = ({ value, min, max, label }) => {
   const backgroundArc = arc()
@@ -29,21 +29,20 @@ const Gauge = ({ value, min, max, label }) => {
     .endAngle(angle)
     .cornerRadius(1)();
 
-  const colorScale = scaleLinear().domain([0, 1]).range(["#3999FF", "#2C76DD"]);
+  const colorScale = scaleLinear().domain([0, 1]).range(['#3999FF', '#2C76DD']);
 
   const gradientSteps = colorScale.ticks(10).map((val) => colorScale(val));
-
 
   return (
     <div
       style={{
-        textAlign: "center",
+        textAlign: 'center',
       }}
     >
       <svg
-        style={{ overflow: "visible" }}
+        style={{ overflow: 'visible' }}
         width="20em"
-        viewBox={[-1, -1, 2, 1].join(" ")}
+        viewBox={[-1, -1, 2, 1].join(' ')}
       >
         <defs>
           <linearGradient
@@ -76,10 +75,10 @@ const Gauge = ({ value, min, max, label }) => {
 
       <div
         style={{
-          marginTop: "0.4em",
-          fontSize: "3em",
-          lineHeight: "1em",
-          fontWeight: "900",
+          marginTop: '0.4em',
+          fontSize: '3em',
+          lineHeight: '1em',
+          fontWeight: '900',
           fontFeatureSettings: "'zero', 'tnum' 1",
         }}
       >
@@ -89,21 +88,16 @@ const Gauge = ({ value, min, max, label }) => {
       {!!label && (
         <div
           style={{
-            color: "#8b8ba7",
-            marginTop: "0.6em",
-            fontSize: "1.3em",
-            lineHeight: "1.3em",
-            fontWeight: "700",
+            color: '#8b8ba7',
+            marginTop: '0.6em',
+            fontSize: '1.3em',
+            lineHeight: '1.3em',
+            fontWeight: '700',
           }}
         >
-          {value}
-          {' '}
-          <span style={{ fontWeight: "300" }}>Hz</span>
-
+          {value} <span style={{ fontWeight: '300' }}>Hz</span>
         </div>
       )}
-
-   
     </div>
   );
 };

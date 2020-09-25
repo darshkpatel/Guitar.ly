@@ -1,14 +1,14 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const PracticeSchema = new mongoose.Schema({
-  title: { type: String,  required: true },
+  title: { type: String, required: true },
 
-  difficulty: { type: String, enum: ["Easy", "Medium", "Hard"] },
+  difficulty: { type: String, enum: ['Easy', 'Medium', 'Hard'] },
 
   slug: { type: String, required: true },
 
-  data: { type: Object }
-
+  data: { type: Object },
 });
 
-export default mongoose.models.Practice || mongoose.model("Practice", PracticeSchema);
+export default mongoose.models.Practice ||
+  mongoose.model('Practice', PracticeSchema);

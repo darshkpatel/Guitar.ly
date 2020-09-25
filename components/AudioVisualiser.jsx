@@ -1,19 +1,19 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from 'react';
 
 const AudioVisualiser = ({ audioData }) => {
   const canvas = React.createRef();
 
   const filterData = (rawData) => {
-    const samples = 100; 
-    const blockSize = Math.floor(rawData.length / samples); 
+    const samples = 100;
+    const blockSize = Math.floor(rawData.length / samples);
     const filteredData = [];
     for (let i = 0; i < samples; i++) {
-      const blockStart = blockSize * i; 
+      const blockStart = blockSize * i;
       let sum = 0;
       for (let j = 0; j < blockSize; j++) {
-        sum += + Math.abs(rawData[blockStart + j]); 
+        sum += +Math.abs(rawData[blockStart + j]);
       }
-      filteredData.push(sum / blockSize); 
+      filteredData.push(sum / blockSize);
     }
     return filteredData;
   };
@@ -27,13 +27,13 @@ const AudioVisualiser = ({ audioData }) => {
     const thisCanvas = canvas.current;
     const { height } = thisCanvas;
     const { width } = thisCanvas;
-    const context = thisCanvas.getContext("2d");
+    const context = thisCanvas.getContext('2d');
     let x = 0;
     const data = normalizeData(filterData(audioData.audioData));
     const sliceWidth = (width * 1.0) / data.length;
 
     context.lineWidth = 2;
-    context.strokeStyle = "#3999FF";
+    context.strokeStyle = '#3999FF';
     context.clearRect(0, 0, width, height);
 
     context.beginPath();
@@ -56,7 +56,7 @@ const AudioVisualiser = ({ audioData }) => {
       draw();
     }
   });
-  return <canvas style={{width: '100%', height: '100px'}} ref={canvas} />;
+  return <canvas style={{ width: '100%', height: '100px' }} ref={canvas} />;
 };
 
 export default AudioVisualiser;

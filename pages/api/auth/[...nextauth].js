@@ -1,7 +1,7 @@
-import NextAuth from 'next-auth'
-import Providers from 'next-auth/providers'
-import Profile from '../../../models/Profile'
-import connectDb from '../../../utils/dbHelper'
+import NextAuth from 'next-auth';
+import Providers from 'next-auth/providers';
+import Profile from '../../../models/Profile';
+import connectDb from '../../../utils/dbHelper';
 
 const options = {
   site: process.env.VERCEL_URL,
@@ -12,26 +12,31 @@ const options = {
     }),
     Providers.GitHub({
       clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET
-    })
+      clientSecret: process.env.GITHUB_SECRET,
+    }),
   ],
   database: process.env.DATABASE_URL,
-  events:{
-    createUser: async (message) => { 
-      await connectDb()
+  events: {
+    createUser: async (message) => {
+      await connectDb();
 
       // Create user profile entry when a user is created
-      console.log('Creating Profile for', message.email)
-      await Profile.create({userEmail: message.email, completedLessons: [], completedPractices: []}, (err, data)=>{
-        if(err) throw err;
-        console.log('Created Profile', data)
-      })
-      
-    }
-  }
+      console.log('Creating Profile for', message.email);
+      await Profile.create(
+        {
+          userEmail: message.email,
+          completedLessons: [],
+          completedPractices: [],
+        },
+        (err, data) => {
+          if (err) throw err;
+          console.log('Created Profile', data);
+        }
+      );
+    },
+  },
+};
 
-}
+const Auth = (req, res) => NextAuth(req, res, options);
 
-const Auth = (req, res) => NextAuth(req, res, options)
-
-export default Auth
+export default Auth;
