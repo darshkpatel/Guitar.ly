@@ -8,7 +8,7 @@ const Learn = () => {
   const [session, loading] = useSession();
 
   // Redirect to login page if not logged in 
-  if (!session && !loading) router.push("/api/auth/signin?callbackUrl=http%3A%2F%2Flocalhost%3A3000%2Flearn");
+  if (!session && !loading) router.push("/api/auth/signin?callbackUrl=/learn");
 
   return (
     <>
