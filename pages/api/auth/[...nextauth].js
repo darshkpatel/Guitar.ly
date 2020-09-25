@@ -4,7 +4,7 @@ import Profile from '../../../models/Profile';
 import connectDb from '../../../utils/dbHelper';
 
 const options = {
-  site: process.env.VERCEL_URL,
+  site: process.env.VERCEL_URL || 'https://guitarly.vercel.app',
   providers: [
     Providers.Google({
       clientId: process.env.GOOGLE_ID,
