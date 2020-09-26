@@ -5,8 +5,6 @@ const PracticeSchema = new mongoose.Schema({
 
   difficulty: { type: String, enum: ['Easy', 'Medium', 'Hard'] },
 
-  slug: { type: String, required: true },
-
   data: { type: Object },
 });
 
