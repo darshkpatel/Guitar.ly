@@ -24,5 +24,12 @@
 <p align="center">
   <a href="#key-features">Key Features</a> •
   <a href="#howto">How To Use</a> •
-  <a href="#credits">Credits</a>
+  <a href="#demo">Demo</a>
 </p>
+
+
+
+<a name="demo"></a>
+  
+<h1>Check out the live demo at <a href="https://guitarly.vercel.app/">guitarly.vercel.app</a></h1>
+
