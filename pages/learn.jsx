@@ -88,6 +88,6 @@ export async function getServerSideProps(context) {
   const profile = await Profile.findOne({
     userEmail: session?.user.email,
   }).lean();
-  profile._id = profile._id.toString();
+  if (profile) profile._id = profile?._id.toString();
   return { props: { lessons, profile } };
 }
