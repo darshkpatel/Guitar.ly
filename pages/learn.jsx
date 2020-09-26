@@ -1,4 +1,5 @@
 import { useSession, signin } from 'next-auth/client';
+import useSWR from 'swr';
 import Layout from '../components/Layout';
 import Card from '../components/Card';
 import CardTitle from '../components/CardTitle';
@@ -13,10 +14,19 @@ const titleStyle = {
   margin: 10,
 };
 
+const fetcher = (email) =>
+  fetch('/api/profile', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email }),
+  }).then((res) => res.json());
+
 const Learn = ({ lessons }) => {
   const [session, loading] = useSession();
   // Redirect to login page if not logged in
   if (!session && !loading) signin(null, { callbackUrl: '/learn' });
+
+  const { profile, error } = useSWR(session?.user.email, fetcher);
   const getDifficultyStyle = (difficulty) => {
     switch (difficulty) {
       case 'Easy':
@@ -57,7 +67,12 @@ const Learn = ({ lessons }) => {
                 </div>
               </div>
               <div>
-                <span>Incomplete</span>
+                <span>
+                  {error && 'Error Fetching Data'}
+                  {profile && profile.completedLessons.includes(lesson._id)
+                    ? 'Completed'
+                    : 'Incomplete'}
+                </span>
               </div>
             </ListRow>
           ))}
