@@ -65,3 +65,11 @@ text-align: center;
   .listRow > div > *{
       flex: 1;
   }
+
+  .normalLink{
+    text-decoration: none;
+    color: inherit;
+  }
+  .normalLink:hover{
+    text-decoration: underline;
+  }

@@ -49,7 +49,9 @@ const Learn = ({ lessons, profile }) => {
           {lessons.map((lesson) => (
             <ListRow key={lesson._id}>
               <div>
-                <span>{lesson.title}</span>
+                <a href={`/learn/${lesson._id}`} className={styles.normalLink}>
+                  <span>{lesson.title}</span>
+                </a>
               </div>
               <div>
                 <span>{lesson.difficulty}</span>

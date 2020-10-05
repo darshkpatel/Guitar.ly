@@ -5,7 +5,7 @@ import CardTitle from '../components/CardTitle';
 import ListRow from '../components/ListRow';
 import styles from '../components/styles/card.module.css';
 import connectDb from '../utils/dbHelper';
-import PracticeModel from '../models/practice';
+import PracticeModel from '../models/Practice';
 import Profile from '../models/Profile';
 
 const titleStyle = {
@@ -49,7 +49,12 @@ const Practice = ({ practices, profile }) => {
           {practices.map((practice) => (
             <ListRow key={practice._id}>
               <div>
-                <span>{practice.title}</span>
+                <a
+                  href={`/practice/${practice._id}`}
+                  className={styles.normalLink}
+                >
+                  <span>{practice.title}</span>
+                </a>
               </div>
               <div>
                 <span>{practice.difficulty}</span>
