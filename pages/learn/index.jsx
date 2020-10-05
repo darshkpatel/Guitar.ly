@@ -1,12 +1,12 @@
 import { useSession, getSession, signin } from 'next-auth/client';
-import Layout from '../components/Layout';
-import Card from '../components/Card';
-import CardTitle from '../components/CardTitle';
-import ListRow from '../components/ListRow';
-import styles from '../components/styles/card.module.css';
-import connectDb from '../utils/dbHelper';
-import Lesson from '../models/Lesson';
-import Profile from '../models/Profile';
+import Layout from '../../components/Layout';
+import Card from '../../components/Card';
+import CardTitle from '../../components/CardTitle';
+import ListRow from '../../components/ListRow';
+import styles from '../../components/styles/card.module.css';
+import connectDb from '../../utils/dbHelper';
+import Lesson from '../../models/Lesson';
+import Profile from '../../models/Profile';
 
 const titleStyle = {
   fontSize: '26px',
