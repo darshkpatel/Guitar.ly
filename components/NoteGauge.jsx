@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AudioAnalyser from './AudioAnalyser';
 import buttonStyles from './styles/buttons.module.css';
 
@@ -26,10 +26,19 @@ const NoteGauge = () => {
     }
   };
 
+  // Start Microphone on page load
+  useEffect(() => {
+    getMicrophone();
+  }, []);
+
   return (
     <div className="App">
       <div className="controls">
-        <button onClick={toggleMicrophone} type="button" className={buttonStyles.buttonMic}>
+        <button
+          onClick={toggleMicrophone}
+          type="button"
+          className={buttonStyles.buttonMic}
+        >
           {audio ? 'Stop microphone' : 'Start microphone'}
         </button>
       </div>
