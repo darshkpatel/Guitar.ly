@@ -57,9 +57,19 @@ const Practice = ({ practices, profile }) => {
                 </a>
               </div>
               <div>
-                <span>{practice.difficulty}</span>
+                <a
+                  href={`/practice/difficulty/${practice.difficulty}`}
+                  className={styles.normalLink}
+                >
+                  <span>{practice.difficulty}</span>
+                </a>
                 <div>
-                  <span className={getDifficultyStyle(practice.difficulty)} />
+                  <a
+                    href={`/practice/difficulty/${practice.difficulty}`}
+                    className={styles.normalLink}
+                  >
+                    <span className={getDifficultyStyle(practice.difficulty)} />
+                  </a>
                 </div>
               </div>
               <div>
