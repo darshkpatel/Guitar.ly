@@ -54,9 +54,19 @@ const Learn = ({ lessons, profile }) => {
                 </a>
               </div>
               <div>
-                <span>{lesson.difficulty}</span>
+                <a
+                  href={`/learn/difficulty/${lesson.difficulty}`}
+                  className={styles.normalLink}
+                >
+                  <span>{lesson.difficulty}</span>
+                </a>
                 <div>
-                  <span className={getDifficultyStyle(lesson.difficulty)} />
+                  <a
+                    href={`/learn/difficulty/${lesson.difficulty}`}
+                    className={styles.normalLink}
+                  >
+                    <span className={getDifficultyStyle(lesson.difficulty)} />
+                  </a>
                 </div>
               </div>
               <div>
