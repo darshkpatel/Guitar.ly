@@ -7,22 +7,36 @@ export default async function handler(req, res) {
   const session = await getSession({ req });
   if (session) {
     if (method === 'POST') {
-      const { practice } = req.body;
-      if (!practice) res.send(400);
+      const { practice, action } = JSON.parse(req.body);
+      if (!practice || !action) res.send('404');
       await connectDb();
 
-      const userProfile = await Profile.findOneAndUpdate(
-        {
-          userEmail: session.user.email,
-        },
-        { $addToSet: { completedPractices: practice } },
-        { new: true, upsert: false }
-      );
+      const userProfile =
+        action === 'Completed'
+          ? await Profile.findOneAndUpdate(
+              {
+                userEmail: session.user.email,
+              },
+              { $addToSet: { completedPractices: practice } },
+              { new: true, upsert: false }
+            )
+          : await Profile.findOneAndUpdate(
+              {
+                userEmail: session.user.email,
+              },
+              { $pull: { completedPractices: practice } },
+              { new: true, upsert: false }
+            );
 
       if (!userProfile) return res.send(404);
+      console.log(userProfile);
       res.send(userProfile);
     } else {
-      res.send(405);
+      res.send(
+        await Profile.findOne({
+          userEmail: session.user.email,
+        })
+      );
     }
   } else {
     res.send(403);
