@@ -31,7 +31,7 @@ const Navbar = () => {
           <Link href="/learn">
             <span
               className={
-                router.pathname === '/learn'
+                router.pathname.includes('learn')
                   ? styles.navButtonActive
                   : styles.navButton
               }
@@ -43,7 +43,7 @@ const Navbar = () => {
           <Link href="/practice">
             <span
               className={
-                router.pathname === '/practice'
+                router.pathname.includes('practice')
                   ? styles.navButtonActive
                   : styles.navButton
               }
