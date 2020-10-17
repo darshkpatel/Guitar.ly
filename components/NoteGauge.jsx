@@ -32,8 +32,8 @@ const NoteGauge = () => {
   }, []);
 
   return (
-    <div className="App">
-      <div className="controls">
+    <>
+      {/* <div className="controls">
         <button
           onClick={toggleMicrophone}
           type="button"
@@ -41,9 +41,9 @@ const NoteGauge = () => {
         >
           {audio ? 'Stop microphone' : 'Start microphone'}
         </button>
-      </div>
+      </div> */}
       {audio ? <AudioAnalyser audio={audio} /> : ''}
-    </div>
+    </>
   );
 };
 
