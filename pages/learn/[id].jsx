@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import { useSession, getSession, signin } from 'next-auth/client';
 import Layout from '../../components/Layout';
 import Card from '../../components/Card';
@@ -13,6 +14,19 @@ const Learn = ({ profile, lesson }) => {
   const [session, loading] = useSession();
   // Redirect to login page if not logged in
   if (!session && !loading) signin(null, { callbackUrl: '/learn' });
+  const [profileData, setProfile] = useState(profile);
+  const handleStatus = (status) =>
+    fetch('/api/user/lesson', {
+      method: 'POST',
+      body: JSON.stringify({
+        lesson: lesson?._id,
+        action: status,
+      }),
+    }).then(async (res) => {
+      const resp = await res.json();
+      setProfile(resp);
+    });
+
   return (
     <>
       <Layout>
@@ -39,7 +53,8 @@ const Learn = ({ profile, lesson }) => {
               <div>
                 <span>
                   {' '}
-                  {profile && profile.completedLessons.includes(lesson?._id)
+                  {profileData &&
+                  profileData.completedLessons.includes(lesson?._id)
                     ? 'Completed'
                     : 'Incomplete'}
                 </span>
@@ -63,7 +78,7 @@ const Learn = ({ profile, lesson }) => {
             </ListRow>
 
             {/* Error Messages */}
-            <span>{!profile && 'Error Fetching User'}</span>
+            <span>{!profileData && 'Error Fetching User'}</span>
             <span>{!lesson && 'Error Fetching Lesson Info'}</span>
 
             <div
@@ -74,13 +89,22 @@ const Learn = ({ profile, lesson }) => {
                 justifyContent: 'space-between',
               }}
             >
-              <button className={ButtonStyles.buttonAction} type="button">
+              <button
+                className={ButtonStyles.buttonAction}
+                type="button"
+                onClick={() => {
+                  handleStatus('Completed');
+                }}
+              >
                 Mark as Completed
               </button>
               <button
                 className={ButtonStyles.buttonAction}
                 type="button"
                 style={{ backgroundColor: '#E94A47' }}
+                onClick={() => {
+                  handleStatus('Incomplete');
+                }}
               >
                 Mark as Incomplete
               </button>
