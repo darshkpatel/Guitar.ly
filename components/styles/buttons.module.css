@@ -24,4 +24,27 @@
     background-color: #0b81ff;
     transform: translateY(4px);
   }
+
+  .buttonAction{
+    color:#fff;
+    padding:15px 30px;
+    outline: none;
+    background-color: #3999FF;
+    border: none;
+    border-radius:5px;
+    text-align: center;
+    text-align: center;
+    cursor: pointer;
+    font-size:20px;
+  }
+
+  .buttonAction:hover{
+    background-color: #0b81ff;
+  }
+
+
+.buttonAction:active {
+    background-color: #0b81ff;
+    transform: translateY(4px);
+  }
   
