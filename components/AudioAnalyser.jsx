@@ -1,9 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import Pitchfinder from 'pitchfinder';
+import { useDispatch } from 'react-redux';
 import AudioVisualiser from './AudioVisualiser';
 import Gauge from './Gauge';
 
+const useRedux = () => {
+  const dispatch = useDispatch();
+  const setNote = (note) =>
+    dispatch({
+      type: 'SET_NOTE',
+      payload: { note },
+    });
+
+  return { setNote };
+};
 const noteStrings = [
   'C',
   'C♯',
@@ -31,6 +42,7 @@ const AudioAnalyser = ({ audio }) => {
   const [noteName, setNoteName] = useState('E');
   const [frequency, setFrequency] = useState(82);
   const [octave, setOctave] = useState(2);
+  const { setNote } = useRedux();
   let audioContext;
   let analyser;
   let dataArray;
@@ -51,6 +63,7 @@ const AudioAnalyser = ({ audio }) => {
       setNoteName(noteStrings[note % 12]);
       setOctave(parseInt(note / 12, 10) - 1);
       // console.log({ frequency, note, noteName, octave });
+      setNote(`${noteStrings[note % 12]}${parseInt(note / 12, 10) - 1}`);
     }
     rafId = requestAnimationFrame(tick);
   };

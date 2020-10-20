@@ -29,7 +29,7 @@ const LessonSchema = new mongoose.Schema({
 
   octave: { type: Number, min: 1, max: 4 },
 
-  data: { type: Object },
+  data: { type: String },
 });
 
 export default mongoose.models.Lesson || mongoose.model('Lesson', LessonSchema);

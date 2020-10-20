@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSession, getSession, signin } from 'next-auth/client';
+import { useSelector } from 'react-redux';
 import Layout from '../../components/Layout';
 import Card from '../../components/Card';
 import CardTitle from '../../components/CardTitle';
@@ -12,9 +13,12 @@ import ButtonStyles from '../../components/styles/buttons.module.css';
 
 const Learn = ({ profile, lesson }) => {
   const [session, loading] = useSession();
+  const note = useSelector((state) => state.note);
+
   // Redirect to login page if not logged in
   if (!session && !loading) signin(null, { callbackUrl: '/learn' });
   const [profileData, setProfile] = useState(profile);
+
   const handleStatus = (status) =>
     fetch('/api/user/lesson', {
       method: 'POST',
@@ -76,7 +80,20 @@ const Learn = ({ profile, lesson }) => {
                 <span>{lesson?.note + lesson?.octave}</span>
               </div>
             </ListRow>
+            <ListRow>
+              <div>
+                <span>Tutorial: </span>
+              </div>
+              <div>
+                <a href={lesson?.data}>Youtube</a>
+              </div>
+            </ListRow>
 
+            <span style={{ textAlign: 'center', fontSize: '1.5em' }}>
+              {note === lesson?.note + lesson?.octave
+                ? 'You Got it!'
+                : 'Try Harder'}
+            </span>
             {/* Error Messages */}
             <span>{!profileData && 'Error Fetching User'}</span>
             <span>{!lesson && 'Error Fetching Lesson Info'}</span>
