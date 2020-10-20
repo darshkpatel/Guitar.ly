@@ -62,7 +62,7 @@ const Learn = ({ profile, practice }) => {
                 <span>
                   {' '}
                   {profileData &&
-                  profileData.completedLessons.includes(practice?._id)
+                  profileData.completedPractices.includes(practice?._id)
                     ? 'Completed'
                     : 'Incomplete'}
                 </span>
