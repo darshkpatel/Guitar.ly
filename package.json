@@ -14,10 +14,9 @@
     "d3-format": "^2.0.0",
     "d3-scale": "^3.2.2",
     "d3-shape": "^2.0.0",
-    "mongodb": "^3.6.0",
     "mongoose": "^5.10.6",
     "next": "latest",
-    "next-auth": "^2.1.0",
+    "next-auth": "^3.1.0",
     "pitchfinder": "^2.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -36,5 +35,8 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.1.0",
     "prettier": "^2.1.2"
+  },
+  "optionalDependencies": {
+    "mongodb": "^3.6.2"
   }
 }
