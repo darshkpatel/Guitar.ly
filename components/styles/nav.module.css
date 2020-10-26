@@ -66,13 +66,18 @@
 
 .navButton {
   cursor: pointer;
+  text-decoration: none;
   padding: 0.8rem 1rem;
+  color: inherit;
+
 }
+
 
 .navButtonActive {
   cursor: default;
   padding: 0.8rem 1rem;
   color: black;
+  text-decoration: none;
 }
 
 .navButton:hover {

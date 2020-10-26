@@ -17,7 +17,7 @@ const Navbar = () => {
         {/* Nav Buttons */}
         <div className={styles.navItems}>
           <Link href="/tune">
-            <span
+            <a
               className={
                 router.pathname === '/tune'
                   ? styles.navButtonActive
@@ -25,11 +25,11 @@ const Navbar = () => {
               }
             >
               Tune
-            </span>
+            </a>
           </Link>
           |
           <Link href="/learn">
-            <span
+            <a
               className={
                 router.pathname.includes('learn')
                   ? styles.navButtonActive
@@ -37,11 +37,11 @@ const Navbar = () => {
               }
             >
               Learn
-            </span>
+            </a>
           </Link>
           |
           <Link href="/practice">
-            <span
+            <a
               className={
                 router.pathname.includes('practice')
                   ? styles.navButtonActive
@@ -49,7 +49,7 @@ const Navbar = () => {
               }
             >
               Practice
-            </span>
+            </a>
           </Link>
         </div>
 
