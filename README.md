@@ -33,3 +33,7 @@
   
 <h1>Check out the live demo at <a href="https://guitarly.vercel.app/">guitarly.vercel.app</a></h1>
 
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdarshkpatel%2FGuitar.ly.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdarshkpatel%2FGuitar.ly?ref=badge_large)
