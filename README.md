@@ -15,7 +15,6 @@
     <img src="https://forthebadge.com/images/badges/uses-git.svg"
          alt="Git">
   </a>
-<a href="https://app.fossa.com/projects/git%2Bgithub.com%2Fdarshkpatel%2FGuitar.ly?ref=badge_shield" alt="FOSSA Status"><img src="https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdarshkpatel%2FGuitar.ly.svg?type=shield"/></a>
     <a href="https://dev-to-uploads.s3.amazonaws.com/i/2xg59r17v72yvqfb3wu5.jpg">
     <img src="https://forthebadge.com/images/badges/made-with-javascript.svg"
          alt="Javascript">
