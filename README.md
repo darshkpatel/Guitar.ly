@@ -21,19 +21,28 @@
   </a>
 </p>
 
-<p align="center">
-  <a href="#key-features">Key Features</a> •
-  <a href="#howto">How To Use</a> •
-  <a href="#demo">Demo</a>
-</p>
 
 
-
-<a name="demo"></a>
   
-<h1>Check out the live demo at <a href="https://guitarly.vercel.app/">guitarly.vercel.app</a></h1>
+<h1 align="center">Check out the live demo at <a href="https://guitarly.vercel.app/">guitarly.vercel.app</a></h1>
 
+## Tech Stack
+Database - MongoDB
 
+Frontend - NextJS
+
+Backend - NextJS
+
+CI / CD - Vercel
+
+## Demo Screenshots
+
+![screenshot](./readme_assets/s1.png)
+![screenshot](./readme_assets/s2.png)
+![screenshot](./readme_assets/s3.png)
+![screenshot](./readme_assets/s4.png)
+![screenshot](./readme_assets/s5.png)
+![screenshot](./readme_assets/s6.png)
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fdarshkpatel%2FGuitar.ly.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fdarshkpatel%2FGuitar.ly?ref=badge_large)
