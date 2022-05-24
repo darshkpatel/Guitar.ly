@@ -16,7 +16,7 @@
     "d3-shape": "^2.0.0",
     "mongoose": "^5.10.6",
     "next": "latest",
-    "next-auth": "^3.1.0",
+    "next-auth": "^3.29.3",
     "pitchfinder": "^2.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
